@@ -1,3 +1,7 @@
 #Bash Script:
 cat /etc/shells --> To check list of shells
 which bash -->To check current bash
+touch filename.sh --> to create a bash script
+chmod +x filename.sh --> To change the file in to executable mode
+vi filename.sh --> To open the file in vi editor
+esc :wq --> To save & close the vi editor
