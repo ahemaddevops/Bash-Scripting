@@ -6,5 +6,13 @@ chmod +x filename.sh --> To change the file in to executable mode
 vi filename.sh --> To open the file in vi editor
 esc :wq --> To save & close the vi editor
 Redirecting the file using path locations
+cat >> filename.extension --> typed data will be moved to the given filename.extension
+cat << anything
+This is the New style of learning bash script.
+Output will be on the
+anything
+the output will be "This is the New style of learning bash script.
+Output will be on the
+
 # --> Single line command
 : ' data ' --> Multi line command
