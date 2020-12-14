@@ -1,0 +1,3 @@
+#Bash Script:
+cat /etc/shells --> To check list of shells
+which bash -->To check current bash
