@@ -5,7 +5,8 @@ touch filename.sh --> to create a bash script
 chmod +x filename.sh --> To change the file in to executable mode
 vi filename.sh --> To open the file in vi editor
 esc :wq --> To save & close the vi editor
-Redirecting the file using path locations
+
+Redirecting the file using path locations:
 cat >> filename.extension --> typed data will be moved to the given filename.extension
 cat << anything
 This is the New style of learning bash script.
@@ -14,5 +15,20 @@ anything
 the output will be "This is the New style of learning bash script.
 Output will be on the
 
+Comments:
 # --> Single line command
 : ' data ' --> Multi line command
+
+If condition:
+Example: Count equals to 10, then it will result true or else false, below is script:
+
+count=10
+if [ $count -ne 9 ]
+then
+    echo "True"
+else
+    echo "False"
+fi
+Result: True
+
+
