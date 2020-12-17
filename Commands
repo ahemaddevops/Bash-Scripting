@@ -114,3 +114,33 @@ else
 	echo "Age is not correct"
 fi
 Result: Age is not correct
+
+whileloop:
+Example1:
+#! /bin/bash
+number=1
+while [ $number -le 5 ]
+do
+	echo "$number"
+	number=$(( number+1 ))
+done
+Result:
+1
+2
+3
+4
+5
+
+Example2:
+#! /bin/bash
+number=1
+while [ $number -lt 5 ]
+do
+	echo "$number"
+	number=$(( number+1 ))
+done
+Result:
+1
+2
+3
+4
