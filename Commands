@@ -29,7 +29,7 @@ Operators:
 
 If condition:
 Example: Count equals to 10, then it will result true or else false, below is script:
-
+#! /bin/bash
 count=10
 if [ $count -ne 9 ]
 then
@@ -40,20 +40,9 @@ fi
 Result: True
 
 Example2:
-
-Age=35
-if [ $Age -lt 18 ] && [ $Age -gt 65 ]
-then
-	echo "You are Eligible for Vote..!"
-else
-	echo "Not Eligible for Vote..!"
-fi
-Result: You are eligible for vote..!
-
-Example3:
 elif condition
+#! /bin/bash
 count=9
-
 if [ $count -gt 9 ]
 then
 	echo "First Statement is true"
@@ -67,3 +56,26 @@ else
 	echo "False"
 fi
 Result: Third statement is true
+
+AND Operator:
+Example1:
+#! /bin/bash
+Age=35
+if [ $Age -lt 18 ] && [ $Age -gt 65 ]
+then
+	echo "You are Eligible for Vote..!"
+else
+	echo "Not Eligible for Vote..!"
+fi
+Result: You are eligible for vote..!
+
+Example2:
+#! /bin/bash
+age=25
+
+if [ $age -gt 18 -a $age -lt 27 ]
+then
+	echo "Eligible of Job..!"
+else
+	echo "Not eligible for Job..!"
+fi
