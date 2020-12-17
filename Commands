@@ -31,4 +31,10 @@ else
 fi
 Result: True
 
+-eq  --> Equal to
+-ne  --> Not Equal to
+-gt  --> Greater than
+-lt  --> Less than
+-ge  --> Greater than equal to
+-le  --> Less than equal to
 
