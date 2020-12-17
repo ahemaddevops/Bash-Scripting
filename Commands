@@ -19,6 +19,14 @@ Comments:
 # --> Single line command
 : ' data ' --> Multi line command
 
+Operators:
+-eq  --> Equal to
+-ne  --> Not Equal to
+-gt  --> Greater than
+-lt  --> Less than
+-ge  --> Greater than equal to
+-le  --> Less than equal to
+
 If condition:
 Example: Count equals to 10, then it will result true or else false, below is script:
 
@@ -31,10 +39,31 @@ else
 fi
 Result: True
 
--eq  --> Equal to
--ne  --> Not Equal to
--gt  --> Greater than
--lt  --> Less than
--ge  --> Greater than equal to
--le  --> Less than equal to
+Example2:
 
+Age=35
+if [ $Age -lt 18 ] && [ $Age -gt 65 ]
+then
+	echo "You are Eligible for Vote..!"
+else
+	echo "Not Eligible for Vote..!"
+fi
+Result: You are eligible for vote..!
+
+Example3:
+elif condition
+count=9
+
+if [ $count -gt 9 ]
+then
+	echo "First Statement is true"
+elif [ $count -lt 9 ]
+then
+	echo "Second Statement is true"
+elif [ $count -eq 9 ]
+then
+	echo "Third Statement is true"
+else
+	echo "False"
+fi
+Result: Third statement is true
