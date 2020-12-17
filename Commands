@@ -72,10 +72,45 @@ Result: You are eligible for vote..!
 Example2:
 #! /bin/bash
 age=25
-
 if [ $age -gt 18 -a $age -lt 27 ]
 then
 	echo "Eligible of Job..!"
 else
 	echo "Not eligible for Job..!"
 fi
+Result: Eligible for Job..!
+
+OR Operator:
+Example1:
+#! /bin/bash
+
+age=30
+if [ $age -lt 18 -o $age -gt 50 ]
+then
+	echo "You are eligible for Job..!"
+else
+	echo "You are not eligible for Job..!"
+fi
+Result: You are not eligible for Job..!
+
+Example2:
+#! /bin/bash
+age=30
+if [ $age -lt 18 ] || [ $age -gt 50 ]
+then
+	echo "Age is correct"
+else
+	echo "Age is not correct"
+fi
+Result: Age is not correct
+
+Example3:
+#! /bin/bash
+age=30
+if [ $age -lt 18 ] || [ $age -gt 50 ]
+then
+	echo "Age is correct"
+else
+	echo "Age is not correct"
+fi
+Result: Age is not correct
