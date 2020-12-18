@@ -252,3 +252,25 @@ do
 done < "${1:-/dev/stdin}"
 Result: in terminal if you run the file name along with read file also it will read the file.
 <source filename> <read file name>
+
+Script Output:
+Example:
+#! /bin/bash
+ls -al 1>file1.txt 2>file.txt
+
+Result: when you run the script it will create two files. file1.txt file create the list of details and file2.txt will create empty.
+
+Example2:
+#! /bin/bash
+ls +al 1>file1.txt 2>file.txt
+
+Result: when you run the script it will create two files. file1.txt file create empty and file2.txt will create error details.
+
+Example3:
+#! /bin/bash
+
+ls -al >file.txt 2>&1
+(or)
+ls-al >&file.txt
+
+Result: when you run the script it will create file.txt and load the command data and if there is an error then error data will append in the file.txt
