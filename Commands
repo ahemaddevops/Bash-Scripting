@@ -288,3 +288,100 @@ file2.sh
 echo "My name is : $MESSAGE"
 
 When you the file1.sh output will be "My name is : Ahemad Baba, MBA"
+
+STRINGS:
+Example1:
+#! /bin/bash
+
+echo "Enter First String : "
+read str1
+echo "Enter Second String : "
+read str2
+
+if [ $str1 == $str2 ]
+then
+	echo "Strings Match"
+else
+	echo "Strings doesn't match"
+fi
+Result: when you run the script (It is a case sensitive):
+Enter First String:
+Hello
+Enter Second String:
+hello
+Strings doesn't match
+
+Result: when you run the script:
+Enter First String:
+Hello
+Enter Second String:
+Hello
+Strings Match
+
+Example2:
+#! /bin/bash
+
+echo "Enter First String"
+read str1
+echo "Enter Second String"
+read str2
+
+if [ "$str1" \< "$str2" ]
+then
+	echo "$str1 is smaller than $str2"
+elif [ "$str1" \> "$str2" ]
+then
+	echo "$str1 is greater than $str2"
+else
+	echo "Both strings are equal"
+fi
+Result: when you run the script:
+Enter First String:
+Hello
+Enter Second String:
+hello
+Output: Hello is smaller than hello
+
+Result: when you run the script:
+Enter First String:
+Hello
+Enter Second String:
+Hello
+Output: Both strings are equal
+
+Example3:
+#! /bin/bash
+
+echo "Enter First String"
+read str1
+echo "Enter Second String"
+read str2
+c=${str1^}${str2^^}
+echo $c
+#^ --> Lower case
+#^^ --> Upper Case
+#^l --> Proper Case (First Letter Capitalize)
+Result: Append the two strings
+Enter First String:
+HEllo
+Enter Second String:
+world
+Output: helloWORLD
+
+Example4:
+#! /bin/bash
+
+echo "Enter First String"
+read str1
+echo "Enter Second String"
+read str2
+echo "Enter Third String"
+read str3
+c=${str1^}${str2^^} ${str2^l}
+echo $c
+Result: Append the multiple strings
+Enter First String:
+HEllo
+Enter Second String:
+world
+Output: helloWORLD
