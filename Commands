@@ -161,4 +161,34 @@ Result:
 3
 4
 
+forloop:
+Example1:
+#! /bin/bash
+
+for i in 1 2 3 4 5
+do
+	echo $i
+done
+Result:
+1
+2
+3
+4
+5
+Example2:
+#! /bin/bash
+
+for i in {0..20..3}
+#{start..ending..increment}
+do
+	echo $i
+done
+Result:
+0
+3
+6
+9
+12
+15
+18
 
