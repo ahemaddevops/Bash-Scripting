@@ -232,3 +232,23 @@ Result: count from 0 - 10 and skips 3 & 7
 6
 8
 9
+
+Script Input (Read file):
+Example:
+#! /bin/bash
+
+while read line
+do
+	echo "$line"
+done < "${1:-/dev/stdin}"
+Result: whatever you type it will shows
+
+Example2:
+#! /bin/bash
+
+while read line
+do
+	echo "$line"
+done < "${1:-/dev/stdin}"
+Result: in terminal if you run the file name along with read file also it will read the file.
+<source filename> <read file name>
