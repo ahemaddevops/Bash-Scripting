@@ -274,3 +274,17 @@ ls -al >file.txt 2>&1
 ls-al >&file.txt
 
 Result: when you run the script it will create file.txt and load the command data and if there is an error then error data will append in the file.txt
+
+Sending Scripts to another file:
+Example1:
+file1.sh
+#! /bin/bash
+
+MESSAGE="Ahemad Baba, MBA"
+export MESSAGE
+./file2.sh
+file2.sh
+#! /bin/bash
+echo "My name is : $MESSAGE"
+
+When you the file1.sh output will be "My name is : Ahemad Baba, MBA"
