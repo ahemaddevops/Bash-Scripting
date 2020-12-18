@@ -124,7 +124,7 @@ do
 	echo "$number"
 	number=$(( number+1 ))
 done
-Result:
+Result: while loop works till the number = 5
 1
 2
 3
@@ -139,7 +139,7 @@ do
 	echo "$number"
 	number=$(( number+1 ))
 done
-Result:
+Result:while loop works till the number +1
 1
 2
 3
@@ -155,7 +155,7 @@ do
 	echo $count
 	count=$(( count+1 ))
 done
-Result:
+Result: 
 1
 2
 3
@@ -169,7 +169,7 @@ for i in 1 2 3 4 5
 do
 	echo $i
 done
-Result:
+Result: for loop runs till the given number comes
 1
 2
 3
@@ -183,7 +183,7 @@ for i in {0..20..3}
 do
 	echo $i
 done
-Result:
+Result: for loop works with given arguments and condition of increment number
 0
 3
 6
@@ -192,3 +192,43 @@ Result:
 15
 18
 
+forloop with break:
+Example:
+#! /bin/bash
+
+for (( i=0; i<=10; i++ ))
+do
+	if [ $i -gt 5 ]
+	then
+		break
+	fi
+	echo $i
+done
+Result: count from 1 to 5; after 5 the loop will break
+1
+2
+3
+4
+5
+
+forloop with continue:
+Example:
+#! /bin/bash
+
+for (( i=0; i<10; i++ ))
+do
+	if [ $i -eq 3 ] || [ $i -eq 7 ]
+	then
+		continue
+	fi
+	echo $i
+done
+Result: count from 0 - 10 and skips 3 & 7
+0
+1
+2
+4
+5
+6
+8
+9
