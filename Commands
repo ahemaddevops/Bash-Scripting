@@ -144,3 +144,21 @@ Result:
 2
 3
 4
+
+until loop:
+Example:
+#! /bin/bash
+
+count=1
+until [ $count -ge 10 ]
+do
+	echo $count
+	count=$(( count+1 ))
+done
+Result:
+1
+2
+3
+4
+
+
