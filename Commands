@@ -68,6 +68,291 @@ else
 fi
 Result: Third statement is true
 
+AND Operator:
+Example1:
+#! /bin/bash
+Age=35
+if [ $Age -lt 18 ] && [ $Age -gt 65 ]
+then
+	echo "You are Eligible for Vote..!"
+else
+	echo "Not Eligible for Vote..!"
+fi
+Result: You are eligible for vote..!
+Example2:
+#! /bin/bash
+age=25
+
+if [ $age -gt 18 -a $age -lt 27 ]
+then
+	echo "Eligible of Job..!"
+else
+	echo "Not eligible for Job..!"
+fi
+Result: Eligible for Job..!
+
+OR Operator:
+Example1:
+#! /bin/bash
+
+age=30
+if [ $age -lt 18 -o $age -gt 50 ]
+then
+	echo "You are eligible for Job..!"
+else
+	echo "You are not eligible for Job..!"
+fi
+Result: You are not eligible for Job..!
+
+Example2:
+#! /bin/bash
+age=30
+if [ $age -lt 18 ] || [ $age -gt 50 ]
+then
+	echo "Age is correct"
+else
+	echo "Age is not correct"
+fi
+Result: Age is not correct
+
+Example3:
+#! /bin/bash
+age=30
+if [ $age -lt 18 ] || [ $age -gt 50 ]
+then
+	echo "Age is correct"
+else
+	echo "Age is not correct"
+fi
+Result: Age is not correct
+
+whileloop:
+Example1:
+#! /bin/bash
+number=1
+while [ $number -le 5 ]
+do
+	echo "$number"
+	number=$(( number+1 ))
+done
+Result:
+1
+2
+3
+4
+5
+
+Example2:
+#! /bin/bash
+number=1
+while [ $number -lt 5 ]
+do
+	echo "$number"
+	number=$(( number+1 ))
+done
+Result:
+1
+2
+3
+4
+
+until loop:
+Example:
+#! /bin/bash
+
+count=1
+until [ $count -ge 10 ]
+do
+	echo $count
+	count=$(( count+1 ))
+done
+Result:
+1
+2
+3
+4
+
+forloop:
+Example1:
+#! /bin/bash
+
+for i in 1 2 3 4 5
+do
+	echo $i
+done
+Result:
+1
+2
+3
+4
+5
+Example2:
+#! /bin/bash
+
+for i in {0..20..3}
+#{start..ending..increment}
+do
+	echo $i
+done
+Result:
+0
+3
+6
+9
+12
+15
+18
+
+whileloop:
+Example1:
+#! /bin/bash
+number=1
+while [ $number -le 5 ]
+do
+	echo "$number"
+	number=$(( number+1 ))
+done
+Result:
+Result: while loop works till the number = 5
+1
+2
+3
+4
+5
+Example2:
+#! /bin/bash
+number=1
+while [ $number -lt 5 ]
+do
+	echo "$number"
+	number=$(( number+1 ))
+done
+Result:
+Result:while loop works till the number +1
+1
+2
+3
+4
+until loop:
+Example:
+#! /bin/bash
+count=1
+until [ $count -ge 10 ]
+do
+	echo $count
+	count=$(( count+1 ))
+done
+Result:
+Result: 
+1
+2
+3
+@@ -169,7 +169,7 @@ for i in 1 2 3 4 5
+do
+	echo $i
+done
+Result:
+Result: for loop runs till the given number comes
+1
+2
+3
+@@ -183,7 +183,7 @@ for i in {0..20..3}
+do
+	echo $i
+done
+Result:
+Result: for loop works with given arguments and condition of increment number
+0
+3
+6
+@@ -192,3 +192,43 @@ Result:
+15
+18
+
+forloop with break:
+Example:
+#! /bin/bash
+
+for (( i=0; i<=10; i++ ))
+do
+	if [ $i -gt 5 ]
+	then
+		break
+	fi
+	echo $i
+done
+Result: count from 1 to 5; after 5 the loop will break
+1
+2
+3
+4
+5
+
+forloop with continue:
+Example:
+#! /bin/bash
+
+for (( i=0; i<10; i++ ))
+do
+	if [ $i -eq 3 ] || [ $i -eq 7 ]
+	then
+		continue
+	fi
+	echo $i
+done
+Result: count from 0 - 10 and skips 3 & 7
+0
+1
+2
+4
+5
+6
+8
+9
+
+Script Input (Read file):
+Example:
+#! /bin/bash
+
+while read line
+do
+	echo "$line"
+done < "${1:-/dev/stdin}"
+Result: whatever you type it will shows
+
+Example2:
+#! /bin/bash
+
+while read line
+do
+	echo "$line"
+done < "${1:-/dev/stdin}"
+Result: in terminal if you run the file name along with read file also it will read the file.
+<source filename> <read file name>
+
+Script Output:
+Example:
+#! /bin/bash
+ls -al 1>file1.txt 2>file.txt
+
+Result: when you run the script it will create two files. file1.txt file create the list of details and file2.txt will create empty.
+
+Example2:
+#! /bin/bash
+ls +al 1>file1.txt 2>file.txt
+
+Result: when you run the script it will create two files. file1.txt file create empty and file2.txt will create error details.
+
+Example3:
+#! /bin/bash
+
+ls -al >file.txt 2>&1
+(or)
+ls-al >&file.txt
+
+Result: when you run the script it will create file.txt and load the command data and if there is an error then error data will append in the file.txt
+
+
 STRINGS:
 Example1:
 #! /bin/bash
