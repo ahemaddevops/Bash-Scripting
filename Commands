@@ -638,3 +638,14 @@ else
 	echo "waiting to press any key"
 fi
 done
+
+inotify:
+Example:
+#! /bin/bash
+
+mkdir -p temp/newfolder
+inotifywait -m temp/newfolder
+Output:
+Create a directory and then you can create a file and adding and deleting the data from the file.
+In another terminal it will show the operational activities.
+
