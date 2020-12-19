@@ -385,3 +385,37 @@ HEllo
 Enter Second String:
 world
 Output: helloWORLD
+
+Number & Arithmetic Operators:
+Example1:
+#! /bin/bash
+echo 10 + 10
+Result: 10 + 10
+
+Example2:
+#! /bin/bash
+n=10
+n1=10
+echo $(( n + n1 ))
+or 
+echo $(expr $n + $n1)
+Result: 20
+
+Example3:
+#! /bin/bash
+n=10
+n1=10
+echo $(( n * n1 ))
+or
+echo $(expr $n \* $n1)
+Result: 100
+
+Hexa Decimal Numbers:
+Example:
+#! /bin/bash
+echo "Enter the Hexadecimal number"
+read Hex
+echo -n "The decimal value of $Hex is : "
+echo "obase=10; ibase=17; $Hex" | bc
+Result: Hex = ABC
+The decimal value of ABC is : 3089
