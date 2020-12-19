@@ -564,3 +564,20 @@ else
 	echo "Create a file"
 fi
 
+Send email using bash script:
+Example:
+sudo apt install ssmtp
+gedit /etc/ssmtp/ssmtp.conf
+root=emailid
+mailhub=smtp.gmail.com:587
+AuthUser=emailid
+AuthPass=password
+UseSTARTTLS=yes
+
+create a file using the data --> ssmtp emailid
+run above file
+To: receiver email id
+From: your email id
+Subject: Subject line 
+Body Line
+Ctrl + D
