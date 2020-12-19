@@ -475,3 +475,92 @@ echo $value
 Result:
 Global Variable
 Local Variable
+
+Files & Directories:
+Example: To check the direct exists or not ?
+! /bin/bash
+echo "Check the directory !"
+read direct
+if [ -d "$direct" ]
+then
+	echo "$direct exists"
+else
+	echo "$direct doesn't exist"
+fi
+Result: Check the directory --> provide the folder name
+Output: given folder name with doesn't exist
+
+Example1: To check the file exists or not ?
+! /bin/bash
+echo "Check the file !"
+read filename
+if [ -d "$filename" ]
+then
+	echo "$file exists"
+else
+	echo "$file doesn't exist"
+fi
+Result: Check the filename --> provide the file name
+Output: given file name with doesn't exist
+
+Example2: To create file and directory using script.
+#! /bin/bash
+echo "Enter the file name to create..!"
+read filename
+echo "Enter the folder name to create..!"
+read foldername
+touch $filename
+mkdir $foldername
+Result: give the file name and after that folder name.
+
+Example3: To append the existing file using script.
+#! /bin/bash
+echo "Enter the file name"
+read filename
+if [ -f "$filename" ]
+then
+	echo "Enter the text to the filename to append"
+	read filetext
+	echo "$filetext" >> $filename (if you use single > it will delete the existing data and overwrite; if you use double >> it will append with the existing data)
+else
+	echo "$filename doesn't exits"
+fi
+
+Example4: To read the file line by line using script.
+#! /bin/bash
+echo "Enter filename from which you want to read"
+read filename
+if [ -f "$filename" ]
+then
+	while IFS= read -r line
+	do
+		echo "$line"
+	done <$filename
+else
+	echo "$filename doesn't exist"
+fi
+
+Example5: To remove the file by using script
+#! /bin/bash
+echo "Enter the filename to delete"
+read filename
+
+if [ -f $filename ]
+then
+	rm $filename
+else
+	echo "$filename doesn't exist"
+fi
+
+Example6: To create a new file with execute permission using the script
+#! /bin/bash
+echo "Enter new file name"
+read filename
+touch $filename
+if [ -f $filename ]
+then
+	chmod +x $filename
+else
+	echo "Create a file"
+fi
+
