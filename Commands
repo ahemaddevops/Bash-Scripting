@@ -419,3 +419,17 @@ echo -n "The decimal value of $Hex is : "
 echo "obase=10; ibase=17; $Hex" | bc
 Result: Hex = ABC
 The decimal value of ABC is : 3089
+
+Arrays:
+Example1:
+#! /bin/bash
+
+mobile=('OnePlus' 'Samsung' 'Nokia')
+
+echo "${mobile[@]}"
+echo "${!mobile[@]}"
+echo "${#mobile[@]}"
+Result:
+OnePlus Samsung Nokia
+0 1 2 [Index number]
+3 [count of index]
