@@ -596,3 +596,45 @@ Example1:
 #! /bin/bash
 url="http://www.ovh.net/files/1Mb.dat"
 curl -I ${url}
+
+SELECT or Professional Menu's:
+Example:
+#! /bin/bash
+#select mobile in OnePlus Samsung Nokia Oppo
+#do
+#	echo "You have selected $mobile"
+#done
+Output: list all the mobiles 
+
+Example2:
+#! /bin/bash
+select mobile in OnePlus Samsung Nokia Oppo
+do
+	case $mobile in
+	OnePlus)
+		echo "OnePlus Selected";;
+	Samsung)
+		echo "Samsung Selected";;
+	Nokia)
+		echo "Nokia Selected";;
+	Oppo)
+		echo "Oppo Selected";;
+	*)
+		echo "Error: Please selected between 1..4";;
+	esac
+done
+
+Example3:
+#! /bin/bash
+echo "Press any key to continue"
+while [ true ]
+do
+	read -t 3 -n 1
+if [ $? = 0 ]
+then
+	echo "you have terminated from the Script..!"
+	exit;
+else
+	echo "waiting to press any key"
+fi
+done
