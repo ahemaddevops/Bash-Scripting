@@ -581,3 +581,18 @@ From: your email id
 Subject: Subject line 
 Body Line
 Ctrl + D
+
+Curl :
+To download the file using curl
+Example:
+#! /bin/bash
+
+url="http://www.ovh.net/files/1Mb.dat"
+curl ${url} -O
+Result: Downloaded the file output on screen
+
+To view the file information using curl
+Example1:
+#! /bin/bash
+url="http://www.ovh.net/files/1Mb.dat"
+curl -I ${url}
