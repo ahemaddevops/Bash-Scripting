@@ -690,3 +690,23 @@ else
 	echo "$filename doesn't exist"
 fi
 Output: where 'i' will replace with 'I'
+
+Debug Scripting:
+Example:
+bash -x filename
+or
+#! /bin/bash
+
+set -x
+
+echo "Enter file name"
+read filename
+
+set +x
+
+if [ -f $filename ]
+then
+	cat grep.txt | sed 's/ThIs/This/g' > sed.txt
+else
+	echo "$filename doesn't exist"
+fi
