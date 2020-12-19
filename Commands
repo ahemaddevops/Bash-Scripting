@@ -433,3 +433,45 @@ Result:
 OnePlus Samsung Nokia
 0 1 2 [Index number]
 3 [count of index]
+
+Functions:
+Example:
+#! /bin/bash
+function funcName()
+{
+	echo "This is the new function"
+}
+funcName
+Result: This is the new function
+
+Example2:
+#! /bin/bash
+function funcPrint()
+{
+	echo $1 $2 --> $1 & $1 --> are arguments
+}
+funcPrint Hello Script
+Result: Hello Script
+
+Example3:
+function funcCheck()
+{
+	value="Function is working properly"
+	echo "$value"
+}
+funcCheck
+Result: Function is worknig properly
+
+Example4:
+function funcCheck()
+{
+	value="Local Variable"
+}
+value="Global Variable"
+echo $value
+
+funcCheck
+echo $value
+Result:
+Global Variable
+Local Variable
