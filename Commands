@@ -649,3 +649,16 @@ Output:
 Create a directory and then you can create a file and adding and deleting the data from the file.
 In another terminal it will show the operational activities.
 
+grep: (It will find out the search text or file)
+Example:
+#! /bin/bash
+echo "Enter the filename to search from"
+read filename
+if [ -f $filename ]
+then
+	echo "Enter the text to search"
+	read grepvar
+	grep -i -n -c $grepvar $filename --> -i it will remove the case sensitive | -n it will show the list number of the search text | -c it will show's the count of search items
+else
+	echo "$filename doesn't exist"
+fi
